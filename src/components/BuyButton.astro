@@ -4,6 +4,8 @@ import AmazonLogo from "./AmazonLogo.astro";
 const MEXICO = "MX";
 
 // De esta forma al desplegar un proyecto con vercell podemos saber de que pais es el usuariio
+// Para que esto funcione necesitamos instalar el adapatador del lugar de despliegue que utilicemos, en este caso vercel
+//pnpm astro add vercel
 const country = Astro.request.headers.get("X-Vecel-IP-Country") ?? "MX";
 
 const storeCountry = country === MEXICO ? "mexico" : "usa";
