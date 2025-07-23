@@ -12,8 +12,13 @@ import { ClientRouter } from "astro:transitions";
     <title>Negozio di Guido</title>
     <ClientRouter />
   </head>
-  <body>
+  <body class:transition-entering>
     <div>
+      <script>
+        window.addEventListener("astro:after-swap", () => {
+          document.body.classList.remove("transition-entering");
+        });
+      </script>
       <slot />
     </div>
   </body>
